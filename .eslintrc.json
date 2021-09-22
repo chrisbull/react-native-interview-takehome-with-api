@@ -46,6 +46,7 @@
     "import/default": "off",
     "import/named": "off",
     "import/namespace": "off",
+    "import/no-named-as-default-member": "off",
     "no-use-before-define": "off",
     "prettier/prettier": "error",
     "react-native/no-color-literals": "off",
