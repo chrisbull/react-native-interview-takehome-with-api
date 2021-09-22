@@ -12,4 +12,19 @@ describe('<App />', () => {
     const tree = renderer.create(<App />).toJSON()
     expect(tree).toMatchSnapshot()
   })
+
+  it('duration asleep is less than duration in bed', () => {
+    const tree = renderer.create(<App />).toJSON()
+
+    const durationInBedComponent = tree.getById('durationInBed')
+    const durationAsleepComponent = tree.getById('durationAsleep')
+    const submitButton = tree.getById('submit')
+
+    fireEvent(durationInBedComponent).select(2)
+    fireEvent(durationAsleepComponent).select(5)
+
+    fireEvent(submitButton).click()
+
+    expect(tree).toThrowError('Asleep cannot be greater than time in bed')
+  })
 })
