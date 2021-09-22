@@ -3,7 +3,8 @@
     "browser": true,
     "node": true,
     "es2021": true,
-    "react-native/react-native": true
+    "react-native/react-native": true,
+    "jest/globals": true
   },
   "plugins": [
     "react",
@@ -14,6 +15,7 @@
     "jsx-a11y",
     "import",
     "uilib",
+    "jest",
     "prettier"
   ],
   "extends": [
@@ -26,6 +28,7 @@
     "plugin:react-native/all",
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
+    "plugin:jest/recommended",
     "prettier",
     "plugin:prettier/recommended"
   ],
@@ -60,6 +63,9 @@
         "alwaysTryTypes": true,
         "project": "tsconfig.json"
       }
+    },
+    "jest": {
+      "version": 26
     }
   }
 }

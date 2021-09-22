@@ -1,10 +1,9 @@
 import { StatusBar } from 'expo-status-bar'
-import { Box, Button, Card, HStack, NativeBaseProvider, Select, useToast } from 'native-base'
+import { Box, Button, Card, HStack, NativeBaseProvider, Select } from 'native-base'
 import React, { useState, useEffect, useCallback } from 'react'
 import { Text } from 'react-native'
 
 export default function App() {
-  const toast = useToast()
   const [enabled, setEnabled] = useState(false)
   const [loading, setLoading] = useState(false)
   const [calculatedValue, setCalculatedValue] = useState<number>()
@@ -36,17 +35,12 @@ export default function App() {
         })
         .catch((error) => {
           console.error(error)
-          toast.show({
-            title: 'Oops, something went wrong!',
-            status: 'error',
-            placement: 'top',
-          })
         })
         .finally(() => {
           setLoading(false)
         })
     }
-  }, [durationAsleep, durationInBed, toast])
+  }, [durationAsleep, durationInBed])
 
   useEffect(() => {
     if (durationInBed && durationAsleep) {
